@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import checkIcon from '../assets/check-icon.svg';
+import aiFeatureImage from '../assets/ai-feature.jpg';
+---
+
+<section class="py-20 sm:py-32 bg-white">
+  <div class="container px-4 md:px-8 grid md:grid-cols-2 gap-12 items-center">
+    
+    <!-- Image Content -->
+    <div class="md:col-span-1 flex justify-center">
+      <Image src={aiFeatureImage} alt="AI Features" class="rounded-lg shadow-lg max-w-sm lg:max-w-md" />
+    </div>
+
+    <!-- Text Content -->
+    <div class="md:col-span-1">
+      <h2 class="font-heading text-4xl md:text-5xl uppercase text-gray-800 mb-6 tracking-wide">
+        Belanja Material Kelistrikan Lebih Mudah dan Cepat dengan AI
+      </h2>
+      <p class="text-lg text-gray-600 mb-8">
+        SonusHub menghadirkan platform belanja material kelistrikan yang inovatif dengan teknologi AI. Temukan solusi energi terbaik untuk industri Anda dengan mudah dan cepat melalui:
+      </p>
+
+      <div class="space-y-4">
+        
+        <div class="flex items-start">
+          <img src={checkIcon.src} alt="Check Icon" class="w-6 h-6 mr-4 mt-1 flex-shrink-0" />
+          <p class="text-lg text-gray-700"><strong>Rekomendasi produk yang dipersonalisasi</strong></p>
+        </div>
+
+        <div class="flex items-start">
+          <img src={checkIcon.src} alt="Check Icon" class="w-6 h-6 mr-4 mt-1 flex-shrink-0" />
+          <p class="text-lg text-gray-700"><strong>Pencarian canggih</strong></p>
+        </div>
+
+        <div class="flex items-start">
+          <img src={checkIcon.src} alt="Check Icon" class="w-6 h-6 mr-4 mt-1 flex-shrink-0" />
+          <p class="text-lg text-gray-700"><strong>Analisa material yang di butuhkan</strong></p>
+        </div>
+        
+        <div class="flex items-start">
+          <img src={checkIcon.src} alt="Check Icon" class="w-6 h-6 mr-4 mt-1 flex-shrink-0" />
+          <p class="text-lg text-gray-700"><strong>Bantuan dan dukungan 24/7</strong></p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

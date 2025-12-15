@@ -3,6 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Navbar from '../components/Navbar.astro';
 import Stats from '../components/Stats.astro';
+import Cta from '../components/Cta.astro';
+import Features from '../components/Features.astro';
+import AiFeatures from '../components/AiFeatures.astro';
+import Profit from '../components/Profit.astro';
 ---
 
 <Layout title="SonusHUB Profile">
@@ -11,12 +15,8 @@ import Stats from '../components/Stats.astro';
 		<Hero />
 	</div>
 	<Stats />
-	<!-- Placeholder for other sections that would follow the stats -->
-	<section class="min-h-screen bg-white p-8">
-		<div class="container px-4 md:px-8">
-			<h2 class="text-3xl font-bold mb-4">Konten Lainnya Disini</h2>
-			<p>Ini adalah area untuk konten lain setelah Hero Section.</p>
-			<!-- Here you would place other sections like "My Service", "My Work", etc. -->
-		</div>
-	</section>
+	<Profit />
+	<Cta />
+	<Features />
+	<AiFeatures />
 </Layout>

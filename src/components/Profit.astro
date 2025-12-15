@@ -1,0 +1,62 @@
+---
+import { Image } from 'astro:assets';
+import checkIcon from '../assets/check-icon.svg';
+import benefitImage from '../assets/sonushub.png';
+---
+
+<section class="py-20 sm:py-32 bg-gray-50">
+  <div class="container px-4 md:px-8 grid md:grid-cols-2 gap-12 items-center">
+    
+    <!-- Image Content -->
+    <div class="md:col-span-1 flex justify-center">
+      <Image src={benefitImage} alt="Benefit SonusHUB" class="rounded-lg shadow-lg max-w-sm lg:max-w-md" />
+    </div>
+
+    <!-- Text Content -->
+    <div class="md:col-span-1">
+      <p class="text-base font-semibold text-[#014AAD] uppercase tracking-wider mb-2">
+        Kategori Material
+      </p>
+      <h2 class="font-heading text-4xl md:text-5xl uppercase text-gray-800 mb-8 tracking-wide">
+        <strong>Siap Untung</strong> Bersama SonusHUB
+      </h2>
+
+      <div class="space-y-6">
+        
+        <div class="flex items-start">
+          <img src={checkIcon.src} alt="Check Icon" class="w-6 h-6 mr-4 mt-1 flex-shrink-0" />
+          <div>
+            <h3 class="font-bold text-lg text-gray-800">Hemat biaya energi:</h3>
+            <p class="text-gray-600">Kurangi tagihan listrik dan tingkatkan efisiensi energi dengan produk energi terbarukan SonusHUB.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <img src={checkIcon.src} alt="Check Icon" class="w-6 h-6 mr-4 mt-1 flex-shrink-0" />
+          <div>
+            <h3 class="font-bold text-lg text-gray-800">Ramah lingkungan:</h3>
+            <p class="text-gray-600">Beralih ke energi terbarukan bersama SonusHUB untuk masa depan industri yang lebih hijau dan berkelanjutan.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <img src={checkIcon.src} alt="Check Icon" class="w-6 h-6 mr-4 mt-1 flex-shrink-0" />
+          <div>
+            <h3 class="font-bold text-lg text-gray-800">Produk unggulan:</h3>
+            <p class="text-gray-600">Temukan berbagai panel surya terkemuka, peralatan pendukung sistem tenaga listrik, dan banyak lagi di SonusHUB.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <img src={checkIcon.src} alt="Check Icon" class="w-6 h-6 mr-4 mt-1 flex-shrink-0" />
+          <div>
+            <h3 class="font-bold text-lg text-gray-800">Dilengkapi AI:</h3>
+            <p class="text-gray-600">Tersedia AI Sona dan Sonia yang akan membantu memilih material yang di butuhkan di SonusHUB.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

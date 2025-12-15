@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import ctaImage from '../assets/sonushub3.png';
+---
+
+<section class="py-20 sm:py-32 bg-white">
+  <div class="container px-4 md:px-8 grid md:grid-cols-2 gap-12 items-center">
+    
+    <!-- Text Content -->
+    <div class="md:col-span-1">
+      <p class="text-base font-semibold text-[#014AAD] uppercase tracking-wider mb-2">
+        Detail Produk
+      </p>
+      <h2 class="font-heading text-4xl md:text-5xl uppercase text-gray-800 mb-6 tracking-wide">
+        Harga Bersaing & Jaminan Kepuasan
+      </h2>
+      <p class="text-lg text-gray-600 max-w-xl mb-8">
+        Dapatkan solusi energi terbaik tanpa menguras anggaran. Produk berkualitas tinggi dengan layanan profesional dari SonusHUB.
+      </p>
+      <a href="https://play.google.com/store/apps/details?id=com.layana.sonus" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#014AAD] text-white font-bold py-3 px-8 rounded-lg text-lg uppercase tracking-wider hover:bg-blue-800 transition-colors">
+        Pelajari Lebih Lanjut
+      </a>
+    </div>
+
+    <!-- Image Content -->
+    <div class="md:col-span-1 flex justify-center">
+      <Image src={ctaImage} alt="Harga Bersaing & Jaminan Kepuasan" class="rounded-lg shadow-lg max-w-sm lg:max-w-md" />
+    </div>
+
+  </div>
+</section>
