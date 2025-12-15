@@ -1,0 +1,74 @@
+---
+// src/components/Stats.astro
+---
+<section class="py-16 sm:py-24 bg-gray-50">
+  <div class="container mx-auto max-w-max-desktop px-4 grid md:grid-cols-2 gap-8 items-center">
+    
+    <!-- Text Content -->
+    <div class="text-center md:text-left">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Jumlah SKU</h2>
+      <p class="text-lg text-gray-600">
+        SonusHUB terus bertumbuh menambah jumlah SKU tersedia untuk menjadi <em>One Stop Platform</em> untuk kebutuhan kelistrikan, <em>smart manufacturing</em> dan energi terbarukan perusahaan Anda.
+      </p>
+    </div>
+
+    <!-- Animated Counter -->
+    <div class="text-center">
+      <div 
+        id="sku-counter"
+        class="text-5xl md:text-7xl font-bold text-[#014AAD]" 
+        data-final-value="10421"
+      >
+        0
+      </div>
+      <div class="text-lg font-semibold text-gray-700 mt-2">
+        <strong>Jumlah SKU Ter-upload</strong>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const counterElement = document.getElementById('sku-counter');
+  
+  const animateCounter = (element, finalValue) => {
+    const duration = 2000; // 2 seconds
+    const startValue = 0;
+    const range = finalValue - startValue;
+    let startTime = null;
+
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const currentValue = Math.floor(progress * range + startValue);
+      
+      // Format number with dots as thousand separators
+      element.innerText = new Intl.NumberFormat('de-DE').format(currentValue);
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        element.innerText = new Intl.NumberFormat('de-DE').format(finalValue);
+      }
+    };
+    
+    window.requestAnimationFrame(step);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const finalValue = parseInt(counterElement.getAttribute('data-final-value'), 10);
+        animateCounter(counterElement, finalValue);
+        observer.unobserve(counterElement); // Stop observing after animation starts
+      }
+    });
+  }, {
+    threshold: 0.5 // Trigger when 50% of the element is visible
+  });
+
+  if (counterElement) {
+    observer.observe(counterElement);
+  }
+</script>

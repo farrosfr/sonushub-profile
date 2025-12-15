@@ -1,0 +1,66 @@
+---
+const navLinks = [
+  { href: "/beranda", text: "Beranda" },
+  { href: "/mitra", text: "Mitra" },
+  { href: "/suplier", text: "Suplier" },
+  { href: "/artikel", text: "Artikel" },
+  { href: "/hubungi-kami", text: "Hubungi Kami" },
+];
+---
+
+<section class="relative h-screen w-full overflow-hidden">
+  <video 
+    autoplay 
+    loop 
+    muted 
+    playsinline 
+    class="absolute top-0 left-0 w-full h-full object-cover z-0"
+    src="https://profile.sonushub.id/wp-content/uploads/2024/04/Desain-tanpa-judul-13.mp4"
+  >
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="absolute inset-0 bg-black bg-opacity-50 z-10 flex items-center justify-center p-4">
+    <div class="text-center text-white max-w-max-desktop mx-auto">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight opacity-0 animate-fade-in-up">
+        Solusi Material Kelistrikan, Smart Industri, dan Energi Terbarukan.
+      </h1>
+      <p class="text-lg sm:text-xl mb-8 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+        SonusHUB adalah platform B2B untuk material kelistrikan, smart industri dan energy terbarukan.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">
+        <a 
+          href="https://wa.me/+6282180000575" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="bg-[#014AAD] text-white font-semibold px-8 py-3 rounded-lg hover:bg-opacity-90 transition-opacity text-lg"
+        >
+          Hubungi Kami
+        </a>
+        <a 
+          href="https://profile.sonushub.id/artikel/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="bg-transparent border-2 border-white text-white font-semibold px-8 py-3 rounded-lg hover:bg-white hover:text-[#014AAD] transition-colors text-lg"
+        >
+          Artikel Terbaru
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 0.5s ease-out forwards;
+  }
+</style>
