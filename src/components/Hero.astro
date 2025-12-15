@@ -3,20 +3,23 @@
 ---
 
 <section class="relative h-screen w-full overflow-hidden">
+  {/* @ts-ignore */}
   <video 
     autoplay 
     loop 
     muted 
     playsinline 
+    loading="lazy"
     class="absolute top-0 left-0 w-full h-full object-cover z-0"
-    src="https://profile.sonushub.id/wp-content/uploads/2024/04/Desain-tanpa-judul-13.mp4"
+    src="/videos/hero.mp4"
   >
     Your browser does not support the video tag.
   </video>
 
   <div class="absolute inset-0 bg-black bg-opacity-50 z-10 flex items-center">
-    <div class="w-full mx-auto max-w-[1440px] px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div class="container mx-auto max-w-max-desktop px-4 md:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[60%_40%] gap-12 items-center">
+
 
         <!-- LEFT: HEADLINE -->
         <div class="text-white">
@@ -26,7 +29,8 @@
         </div>
 
         <!-- RIGHT: DESC + CTA -->
-        <div class="text-white max-w-xl opacity-0 animate-fade-in-up" style="animation-delay: 4.5s;">
+        <div class="text-white pr-6 lg:pr-8 xl:pr-12 opacity-0 animate-fade-in-up">
+
           <p class="text-base sm:text-lg md:text-xl mb-8">
             Platform B2B yang memudahkan industri mengakses solusi kelistrikan dan energi terbarukan.
           </p>
@@ -73,64 +77,65 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const typedTextSpan = document.getElementById('typed-text');
-  if (!typedTextSpan) return;
+  
+  if (typedTextSpan) {
+    const textArray: string[] = ["Solusi material kelistrikan,", "energi terbarukan,", "& <em>smart manufacturing</em>"];
+    const typingDelay: number = 50;
+    const newTextDelay: number = 500; // Delay between lines
+    let textArrayIndex: number = 0;
+    let charIndex: number = 0;
 
-  const textArray = ["Solusi material kelistrikan,", "energi terbarukan,", "& <em>smart manufacturing</em>"];
-  const typingDelay = 50;
-  const newTextDelay = 500; // Delay between lines
-  let textArrayIndex = 0;
-  let charIndex = 0;
-
-  function type() {
-    if (textArrayIndex >= textArray.length) {
-      // End of all lines, stop cursor blinking
-      const cursor = document.querySelector('.typed-cursor');
-      if (cursor) {
-          cursor.style.animation = 'none';
-          cursor.style.opacity = '0';
+    function type() {
+      if (textArrayIndex >= textArray.length) {
+        // End of all lines, stop cursor blinking
+        const cursor = document.querySelector<HTMLElement>('.typed-cursor');
+        if (cursor) {
+            cursor.style.animation = 'none';
+            cursor.style.opacity = '0';
+        }
+        return;
       }
-      return;
-    }
 
-    const currentLine = textArray[textArrayIndex];
-    if (charIndex < currentLine.length) {
-      const char = currentLine.charAt(charIndex);
+      const currentLine = textArray[textArrayIndex];
+      if (charIndex < currentLine.length) {
+        const char = currentLine.charAt(charIndex);
 
-      if (char === '<') {
-        const closingTagIndex = currentLine.indexOf('>', charIndex);
-        if (closingTagIndex !== -1) {
-          // It's a tag, append the whole thing
-          const tag = currentLine.substring(charIndex, closingTagIndex + 1);
-          typedTextSpan.innerHTML += tag;
-          charIndex = closingTagIndex + 1;
+        if (char === '<') {
+          const closingTagIndex = currentLine.indexOf('>', charIndex);
+          if (closingTagIndex !== -1) {
+            // It's a tag, append the whole thing
+            const tag = currentLine.substring(charIndex, closingTagIndex + 1);
+            typedTextSpan.innerHTML += tag;
+            charIndex = closingTagIndex + 1;
+          } else {
+            // Incomplete tag, just append char
+            typedTextSpan.innerHTML += char;
+            charIndex++;
+          }
         } else {
-          // Incomplete tag, just append char
+          // It's a normal character
           typedTextSpan.innerHTML += char;
           charIndex++;
         }
+        setTimeout(type, typingDelay);
       } else {
-        // It's a normal character
-        typedTextSpan.innerHTML += char;
-        charIndex++;
-      }
-      setTimeout(type, typingDelay);
-    } else {
-      // End of a line
-      textArrayIndex++;
-      charIndex = 0;
-      if (textArrayIndex < textArray.length) {
-        typedTextSpan.innerHTML += '<br>';
-        setTimeout(type, newTextDelay);
-      } else {
-        // Recursive call to handle end condition
-        type();
+        // End of a line
+        textArrayIndex++;
+        charIndex = 0;
+        if (textArrayIndex < textArray.length) {
+          typedTextSpan.innerHTML += '<br>';
+          setTimeout(type, newTextDelay);
+        } else {
+          // Recursive call to handle end condition
+          type();
+        }
       }
     }
-  }
 
-  // Initial call to start typing
-  if (textArray.length) {
-    setTimeout(type, newTextDelay + 250);
+    // Initial call to start typing
+    if (textArray.length) {
+      setTimeout(type, newTextDelay + 250);
+    }
   }
 });
 </script>

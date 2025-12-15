@@ -2,7 +2,8 @@
 // src/components/Stats.astro
 ---
 <section class="py-20 sm:py-32 bg-white">
-  <div class="container mx-auto max-w-max-desktop px-4 grid md:grid-cols-5 gap-8 items-center">
+  <div class="mx-auto w-full max-w-[1280px] px-4 md:px-8 grid md:grid-cols-5 gap-8 items-center">
+
     
     <!-- Text Content -->
     <div class="md:col-span-3">
@@ -34,13 +35,13 @@
 <script>
   const counterElement = document.getElementById('sku-counter');
   
-  const animateCounter = (element, finalValue) => {
+  const animateCounter = (element: HTMLElement, finalValue: number) => {
     const duration = 2000; // 2 seconds
     const startValue = 0;
     const range = finalValue - startValue;
-    let startTime = null;
+    let startTime: number | null = null;
 
-    const step = (timestamp) => {
+    const step = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
       const currentValue = Math.floor(progress * range + startValue);
@@ -58,19 +59,22 @@
     window.requestAnimationFrame(step);
   };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const finalValue = parseInt(counterElement.getAttribute('data-final-value'), 10);
-        animateCounter(counterElement, finalValue);
-        observer.unobserve(counterElement); // Stop observing after animation starts
-      }
-    });
-  }, {
-    threshold: 0.5 // Trigger when 50% of the element is visible
-  });
-
   if (counterElement) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const finalValueString = counterElement.getAttribute('data-final-value');
+          if (finalValueString) {
+            const finalValue = parseInt(finalValueString, 10);
+            animateCounter(counterElement, finalValue);
+            observer.unobserve(counterElement); // Stop observing after animation starts
+          }
+        }
+      });
+    }, {
+      threshold: 0.5 // Trigger when 50% of the element is visible
+    });
+
     observer.observe(counterElement);
   }
 </script>
