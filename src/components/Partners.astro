@@ -4,6 +4,8 @@ import { Image } from 'astro:assets';
 // Partner Logos
 import partner1 from '../assets/logos/partner-kadin-jateng.jpg';
 import partner2 from '../assets/logos/partner-kadin-diy.jpg';
+import iaLogo from '../assets/logos/ia.png';
+import primestepLogo from '../assets/logos/primestep.png';
 
 // Media Logos
 import media1 from '../assets/logos/media-1.jpg';
@@ -19,6 +21,8 @@ import media9 from '../assets/logos/media-9.jpg';
 const partners = [
   { src: partner1, alt: 'Kadin Jateng' },
   { src: partner2, alt: 'Kadin DIY' },
+  { src: iaLogo, alt: 'Innovative Academy' },
+  { src: primestepLogo, alt: 'PrimeStep' },
 ];
 
 const media = [
@@ -40,10 +44,10 @@ const media = [
     <!-- Partners Section -->
     <div class="text-center mb-16">
       <h2 class="font-heading text-4xl md:text-5xl uppercase text-gray-800 tracking-wide">
-        Partner Kami
+        Integrator
       </h2>
     </div>
-    <div class="flex justify-center items-center gap-12 lg:gap-16 mb-24">
+    <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-x-8 sm:gap-y-12 lg:gap-16 mb-24">
       {partners.map(logo => (
         <div class="flex-shrink-0">
           <Image src={logo.src} alt={logo.alt} class="h-24 w-auto object-contain mix-blend-multiply transition-all duration-300" />
@@ -54,7 +58,7 @@ const media = [
     <!-- Media Section -->
     <div class="text-center mb-16">
       <h2 class="font-heading text-4xl md:text-5xl uppercase text-gray-800 tracking-wide">
-        Telah Diliput Oleh Media
+        Liputan Media
       </h2>
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-12 items-center">
