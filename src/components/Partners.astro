@@ -1,0 +1,69 @@
+---
+import { Image } from 'astro:assets';
+
+// Partner Logos
+import partner1 from '../assets/logos/partner-kadin-jateng.jpg';
+import partner2 from '../assets/logos/partner-kadin-diy.jpg';
+
+// Media Logos
+import media1 from '../assets/logos/media-1.jpg';
+import media2 from '../assets/logos/media-2.jpg';
+import media3 from '../assets/logos/media-3.jpg';
+import media4 from '../assets/logos/media-4.jpg';
+import media5 from '../assets/logos/media-5.jpg';
+import media6 from '../assets/logos/media-6.jpg';
+import media7 from '../assets/logos/media-7.jpg';
+import media8 from '../assets/logos/media-8.jpg';
+import media9 from '../assets/logos/media-9.jpg';
+
+const partners = [
+  { src: partner1, alt: 'Kadin Jateng' },
+  { src: partner2, alt: 'Kadin DIY' },
+];
+
+const media = [
+  { src: media1, alt: 'Media Logo 1' },
+  { src: media2, alt: 'Media Logo 2' },
+  { src: media3, alt: 'Media Logo 3' },
+  { src: media4, alt: 'Media Logo 4' },
+  { src: media5, alt: 'Media Logo 5' },
+  { src: media6, alt: 'Media Logo 6' },
+  { src: media7, alt: 'Media Logo 7' },
+  { src: media8, alt: 'Media Logo 8' },
+  { src: media9, alt: 'Media Logo 9' },
+];
+---
+
+<section class="py-20 sm:py-32 bg-gray-50">
+  <div class="container px-4 md:px-8">
+    
+    <!-- Partners Section -->
+    <div class="text-center mb-16">
+      <h2 class="font-heading text-4xl md:text-5xl uppercase text-gray-800 tracking-wide">
+        Partner Kami
+      </h2>
+    </div>
+    <div class="flex justify-center items-center gap-12 lg:gap-16 mb-24">
+      {partners.map(logo => (
+        <div class="flex-shrink-0">
+          <Image src={logo.src} alt={logo.alt} class="h-24 w-auto object-contain mix-blend-multiply transition-all duration-300" />
+        </div>
+      ))}
+    </div>
+
+    <!-- Media Section -->
+    <div class="text-center mb-16">
+      <h2 class="font-heading text-4xl md:text-5xl uppercase text-gray-800 tracking-wide">
+        Telah Diliput Oleh Media
+      </h2>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-12 items-center">
+      {media.map(logo => (
+        <div class="flex justify-center">
+          <Image src={logo.src} alt={logo.alt} class="h-20 w-auto object-contain mix-blend-multiply transition-all duration-300" />
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

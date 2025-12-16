@@ -1,0 +1,52 @@
+---
+// src/components/VideoSection.astro
+---
+
+<section class="relative overflow-hidden bg-gray-900">
+  <!-- Shape Divider -->
+  <div class="absolute top-0 left-0 w-full h-[100px] z-10">
+    <svg class="w-full h-full" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+      <path class="fill-current text-gray-50" d="M0,6V0h1000v100L0,6z"></path>
+    </svg>
+  </div>
+
+  {/* @ts-ignore */}
+  <video 
+    autoplay 
+    loop 
+    muted 
+    playsinline 
+    loading="lazy"
+    class="absolute top-0 left-0 w-full h-full object-cover z-0"
+    src="/videos/cta-video.mp4"
+  >
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="relative z-20 flex items-center justify-center text-center text-white py-40 sm:py-56">
+  <div class="container px-4 md:px-8">
+      <h6 class="text-base font-semibold uppercase tracking-wider mb-2 opacity-80">
+        Mitra Solusi Energi
+      </h6>
+      <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl uppercase tracking-wide max-w-4xl mx-auto mb-4">
+        SONUSHUB: Mitra Terpercaya Solusi Kelistrikan & Energi Terbarukan
+      </h2>
+      <p class="text-lg opacity-90">
+        <em class="not-italic">The Next Energy is Electricity.</em>
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1;
+  }
+</style>
