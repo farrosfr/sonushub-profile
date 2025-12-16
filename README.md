@@ -1,46 +1,65 @@
-# Astro Starter Kit: Basics
+# SonusHUB Profile Website
 
-```sh
-npm create astro@latest -- --template basics
-```
+This project is a company profile website for SonusHUB, built with the Astro web framework.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🛠️ Tech Stack
+
+![Astro](https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+Inside of this Astro project, you'll see the following folders and files:
 
 ```text
 /
 ├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+│   ├── favicon.svg
+│   ├── logos/
+│   └── videos/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── AiFeatures.astro
+│   │   ├── Cta.astro
+│   │   ├── Features.astro
+│   │   ├── Footer.astro
+│   │   ├── Hero.astro
+│   │   ├── Navbar.astro
+│   │   ├── Partners.astro
+│   │   ├── Profit.astro
+│   │   └── Stats.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       ├── index.astro
+│       ├── mitra.astro
+│       └── suplier.astro
+├── astro.config.mjs
+├── package.json
+└── README.md
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+##  ROUTES
+
+-   `/`: The main landing page.
+-   `/mitra`: Partnership information page.
+-   `/suplier`: Supplier information page.
 
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command         | Action                                     |
+| :-------------- | :----------------------------------------- |
+| `npm install`   | Installs dependencies                      |
+| `npm run dev`   | Starts local dev server at `localhost:4321`|
+| `npm run build` | Build your production site to `./dist/`    |
+| `npm run preview` | Preview your build locally, before deploying |
+| `npm run astro ...` | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI |
 
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Feel free to check [the Astro documentation](https://docs.astro.build) or jump into the [Astro Discord server](https://astro.build/chat).
