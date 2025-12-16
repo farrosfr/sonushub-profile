@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import { Image } from 'astro:assets';
+
+import suplierImage from '../assets/suplier/suplier-1.jpg';
+
+const benefits = [
+  {
+    number: "01",
+    title: "Jaringan Luas",
+    description: "Dapatkan akses ke ribuan pelanggan potensial di seluruh Indonesia."
+  },
+  {
+    number: "02",
+    title: "Transparansi Bisnis",
+    description: "Bertransaksi dengan sistem yang jelas dan terpercaya."
+  },
+  {
+    number: "03",
+    title: "Promosi dan Pemasaran",
+    description: "Manfaatkan platform kami untuk memperluas jangkauan pasar Anda."
+  },
+  {
+    number: "04",
+    title: "Dukungan Teknis dan Layanan",
+    description: "Tim dukungan kami dan juga AI siap membantu Anda kapan saja."
+  }
+];
+---
+
+<Layout title="Suplier SonusHUB">
+  <Navbar class="bg-white shadow-md sticky top-0 z-30" linkClass="text-gray-700" />
+
+  <!-- Hero Section -->
+  <section class="bg-gray-100 py-20 md:py-28 text-center">
+    <div class="container">
+      <p class="text-base font-semibold text-[#014AAD] uppercase tracking-wider mb-2">Bergabung Menjadi Suplier</p>
+      <h1 class="font-heading text-4xl md:text-6xl uppercase text-gray-800 tracking-wide max-w-4xl mx-auto">
+        Kami Mengundang Anda untuk Menjadi Bagian dari Jaringan Suplier Kami
+      </h1>
+    </div>
+  </section>
+  
+  <!-- Intro Section -->
+  <section class="py-20 sm:py-32 bg-white">
+    <div class="container text-center max-w-4xl mx-auto">
+      <h2 class="font-heading text-3xl md:text-4xl uppercase text-gray-800 mb-4 tracking-wide">
+        Suplier SonusHUB
+      </h2>
+      <div class="w-16 h-1 bg-[#014AAD] mb-6 mx-auto"></div>
+      <p class="text-lg text-gray-600">
+        Selamat datang di halaman khusus bagi para suplier yang ingin bergabung dengan SonusHUB, platform B2B Wholesale Kelistrikan terkemuka dari SonusID. Kami mengundang Anda untuk menjadi bagian dari jaringan suplier kami yang berkomitmen menyediakan produk dan layanan berkualitas untuk mendukung pengembangan industri energi baru di Indonesia.
+      </p>
+    </div>
+  </section>
+
+  <!-- Benefits Grid -->
+  <section class="py-20 sm:py-32 bg-gray-50">
+    <div class="container px-4 md:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {benefits.map(benefit => (
+          <div class="text-center p-8 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            <p class="font-heading text-5xl text-gray-200 mb-4">{benefit.number}</p>
+            <h3 class="font-bold text-xl text-gray-800 mb-3">{benefit.title}</h3>
+            <p class="text-gray-600">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Two-column Section -->
+  <section class="py-20 sm:py-32 bg-white">
+    <div class="container px-4 md:px-8 grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Image Content -->
+      <div class="md:col-span-1 flex justify-center">
+        <Image src={suplierImage} alt="Teknisi bekerja di gardu listrik" class="rounded-lg shadow-lg w-full max-w-lg" />
+      </div>
+      <!-- Text Content -->
+      <div class="md:col-span-1">
+        <h2 class="font-heading text-3xl md:text-4xl uppercase text-gray-800 mb-4 tracking-wide">
+          Kami Siap untuk Memasarkan Produk Anda.
+        </h2>
+        <div class="w-16 h-1 bg-[#014AAD] mb-6"></div>
+        <p class="text-lg text-gray-600 max-w-xl">
+          Silakan isi formulir pendaftaran yang tersedia di bawah ini dengan data yang benar dan lengkap. Kemudian tim kami nanti akan melakukan konfirmasi dan memverifikasi data dan dokumen yang akan di ajukan.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="bg-gray-100">
+    <div class="container py-20 sm:py-32 text-center">
+        <h2 class="font-heading text-3xl md:text-4xl uppercase text-gray-800 mb-2 tracking-wide">
+          Formulir Pendaftaran Suplier
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+          Untuk memulai proses pendaftaran, silakan hubungi tim kami melalui WhatsApp untuk mendapatkan panduan lebih lanjut.
+        </p>
+        <a 
+          href="https://wa.me/+6282180000575" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-flex items-center bg-[#014AAD] text-white font-bold py-3 px-8 rounded-lg text-lg uppercase tracking-wider hover:bg-blue-800 transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.93 7.93 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.89 7.89 0 0 0 13.6 2.326zM7.994 14.521a6.57 6.57 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.068-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.1-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+          </svg>
+          Hubungi via WhatsApp
+        </a>
+    </div>
+  </section>
+
+</Layout>
